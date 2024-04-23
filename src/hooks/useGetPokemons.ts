@@ -13,18 +13,21 @@ export default function useGetPokemons() {
     const offset = (currentPage - 1) * fetchLimit;
     const endpoint = `/pokemon?limit=${fetchLimit}&offset=${offset}`;
 
-    axios
-      .get(endpoint)
-      .then((response) => {
+    const fetchPokemons = async () => {
+      setLoading(true);
+
+      try {
+        const response = await axios.get(endpoint);
         setPokemons(response.data);
         setLastPage(Math.ceil(response.data.count / fetchLimit));
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error(error);
-      })
-      .finally(() => {
+      } finally {
         setLoading(false);
-      });
+      }
+    };
+
+    fetchPokemons();
   }, [currentPage, fetchLimit]);
 
   return {
