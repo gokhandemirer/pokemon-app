@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pokemon APP
+
+This is a simple Pokemon application that lists all the pokemons and their details.
+
+## Tech Stack
+
+- [React](https://reactjs.org/)
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+## Requirements
+
+- [Docker](https://www.docker.com/)
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/gokhandemirer/pokemon-app.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Change directory to the project folder
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cd pokemon-app
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. Set up the environment variables
 
-## Learn More
+```bash
+cp .env.example .env
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. Run the application
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# Run the application
 
-## Deploy on Vercel
+docker-compose up
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Open the application in your browser
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+open http://localhost:3000
+
+```
+
+## Demo
+
+You can access the demo application [here](https://pokemon-app-gokhandemirer.vercel.app/)
