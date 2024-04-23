@@ -39,7 +39,7 @@ cp .env.example .env
 
 # Run the application
 
-docker-compose up
+docker-compose up -d
 
 # Open the application in your browser
 
