@@ -75,7 +75,7 @@ const Table = <T extends object>({
               {table.getRowModel().rows.map((row) => (
                 <tr
                   key={row.id}
-                  className="odd:bg-white even:bg-gray-50"
+                  className="odd:bg-white even:bg-gray-50 cursor-pointer"
                   onClick={() => {
                     onClickRow(row.original as Pokemon);
                   }}
@@ -99,14 +99,14 @@ const Table = <T extends object>({
           <div className="flex flex-col items-center gap-2 pl-4 pt-2 md:flex-row">
             <div className="flex items-center gap-2 pl-4 pt-2">
               <button
-                className="border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                className="border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700"
                 onClick={() => setCurrentPage(1)}
                 disabled={currentPage === 1}
               >
                 {"<<"}
               </button>
               <button
-                className="ml-0 block rounded-l-lg border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                className="ml-0 block rounded-l-lg border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700"
                 onClick={() => setCurrentPage(currentPage - 1)}
                 disabled={currentPage === 1}
               >
@@ -126,7 +126,7 @@ const Table = <T extends object>({
                 </svg>
               </button>
               <button
-                className="block rounded-r-lg border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                className="block rounded-r-lg border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700"
                 onClick={() => setCurrentPage(currentPage + 1)}
                 disabled={currentPage === lastPage}
               >
@@ -147,7 +147,7 @@ const Table = <T extends object>({
               </button>
 
               <button
-                className="border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                className="border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700"
                 onClick={() => setCurrentPage(lastPage)}
                 disabled={currentPage === lastPage}
               >
@@ -168,15 +168,11 @@ const Table = <T extends object>({
           </div>
 
           <p className="flex items-center justify-between pl-7 pt-2 pb-2">
-            <span className="text-sm font-normal text-gray-500 dark:text-gray-400">
+            <span className="text-sm font-normal text-gray-500">
               Showing{" "}
-              <span className="font-semibold text-gray-900 dark:text-white">
-                {pageRange}
-              </span>{" "}
+              <span className="font-semibold text-gray-900">{pageRange}</span>{" "}
               of{" "}
-              <span className="font-semibold text-gray-900 dark:text-white">
-                {totalPage}
-              </span>
+              <span className="font-semibold text-gray-900">{totalPage}</span>
             </span>
           </p>
         </div>
