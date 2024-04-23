@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  nextapp:
+    container_name: nextapp
+    build: .
+    ports:
+      - ${APP_PORT}:3000
+    env_file:
+      - .env
