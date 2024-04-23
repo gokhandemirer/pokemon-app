@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "@/clients/axios";
 import { PokemonDetail } from "@/types";
+import { AxiosError } from "axios";
 
 export default function useGetPokemonDetail(name: string) {
   const [loading, setLoading] = useState(true);
-  const [pokemon, setPokemon] = useState<Partial<PokemonDetail> | null>(null);
+  const [pokemon, setPokemon] = useState<PokemonDetail | null>(null);
+  const [pokemonNotFound, setPokemonNotFound] = useState(false);
 
   useEffect(() => {
     const fetchPokemon = async () => {
@@ -14,7 +16,11 @@ export default function useGetPokemonDetail(name: string) {
         const response = await axios.get(`/pokemon/${name}`);
         setPokemon(response.data);
       } catch (error) {
-        console.log(error);
+        if (error instanceof AxiosError) {
+          if (error.response?.status === 404) {
+            setPokemonNotFound(true);
+          }
+        }
       } finally {
         setLoading(false);
       }
@@ -26,5 +32,6 @@ export default function useGetPokemonDetail(name: string) {
   return {
     loading,
     pokemon,
+    pokemonNotFound,
   };
 }
