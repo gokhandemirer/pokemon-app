@@ -1,3 +1,4 @@
+import { Pokemon } from "@/types";
 import {
   type ColumnDef,
   flexRender,
@@ -15,6 +16,7 @@ interface TableProps<T extends object> {
   currentPage: number;
   pageSize: number;
   setCurrentPage: (page: number) => void;
+  onClickRow: (row: Pokemon) => void;
 }
 
 const Table = <T extends object>({
@@ -25,6 +27,7 @@ const Table = <T extends object>({
   currentPage,
   pageSize,
   setCurrentPage,
+  onClickRow,
 }: TableProps<T>) => {
   const table = useReactTable({
     data,
@@ -71,7 +74,13 @@ const Table = <T extends object>({
             </thead>
             <tbody>
               {table.getRowModel().rows.map((row) => (
-                <tr key={row.id} className="odd:bg-white even:bg-gray-50">
+                <tr
+                  key={row.id}
+                  className="odd:bg-white even:bg-gray-50"
+                  onClick={() => {
+                    onClickRow(row.original as Pokemon);
+                  }}
+                >
                   {row.getVisibleCells().map((cell) => (
                     <td
                       key={cell.id}

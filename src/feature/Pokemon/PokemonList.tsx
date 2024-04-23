@@ -16,6 +16,7 @@ interface PokemonListProps {
   lastPage: number;
   fetchLimit: number;
   setCurrentPage: (page: number) => void;
+  onClickRow: (row: Pokemon) => void;
 }
 
 export default function PokemonList({
@@ -24,6 +25,7 @@ export default function PokemonList({
   lastPage,
   fetchLimit,
   setCurrentPage,
+  onClickRow,
 }: PokemonListProps) {
   return (
     <Table
@@ -34,6 +36,7 @@ export default function PokemonList({
       currentPage={currentPage}
       pageSize={fetchLimit}
       setCurrentPage={setCurrentPage}
+      onClickRow={onClickRow}
     />
   );
 }
