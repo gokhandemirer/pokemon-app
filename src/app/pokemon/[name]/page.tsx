@@ -30,8 +30,8 @@ export default function PokemonDetailPage({
       <Header title="Pokemon Detail" />
       <div className="py-4"></div>
       <main>
-        <div className="flex justify-center">
-          <div className="flex w-1/2">
+        <div className="flex justify-center w-full">
+          <div className="flex w-full md:w-1/2">
             <PokemonCard pokemon={pokemon!} />
           </div>
         </div>

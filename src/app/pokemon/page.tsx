@@ -42,7 +42,7 @@ export default function PokemonListPage() {
         </Link>
       </Header>
       <div className="py-4"></div>
-      <main className="w-8/12 mx-auto">
+      <main className="w-full md:w-6/12 mx-auto">
         <PokemonList
           data={pokemons!}
           currentPage={currentPage}
