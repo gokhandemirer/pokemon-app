@@ -1,6 +1,7 @@
 "use client";
 import useGetPokemons from "@/hooks/useGetPokemons";
 import PokemonList from "@/feature/Pokemon/PokemonList";
+import Loader from "@/components/UI/Loader";
 
 export default function PokemonListPage() {
   const {
@@ -15,7 +16,7 @@ export default function PokemonListPage() {
   return (
     <div>
       {loading ? (
-        <p>Loading...</p>
+        <Loader />
       ) : (
         <PokemonList
           data={pokemons!}
