@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Pokemon API",
-  description: "Simple Pokemon API",
+  title: "Pokemon APP",
+  description: "Simple Pokemon APP",
 };
 
 export default function RootLayout({
