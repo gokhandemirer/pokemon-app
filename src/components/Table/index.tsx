@@ -5,7 +5,6 @@ import {
   getCoreRowModel,
   getPaginationRowModel,
   useReactTable,
-  type CoreRow,
 } from "@tanstack/react-table";
 
 interface TableProps<T extends object> {
@@ -155,8 +154,20 @@ const Table = <T extends object>({
                 {">>"}
               </button>
             </div>
+
+            <div className="flex flex-col items-center gap-2 pl-4 pt-2 sm:flex-row">
+              <div className="flex flex-row">
+                <span className="flex items-center gap-1">
+                  <div>Page</div>
+                  <strong>
+                    {currentPage} of {lastPage}
+                  </strong>
+                </span>
+              </div>
+            </div>
           </div>
-          <p className="flex items-center justify-between pl-4 pt-2">
+
+          <p className="flex items-center justify-between pl-7 pt-2 pb-2">
             <span className="text-sm font-normal text-gray-500 dark:text-gray-400">
               Showing{" "}
               <span className="font-semibold text-gray-900 dark:text-white">
