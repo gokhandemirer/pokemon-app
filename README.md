@@ -49,4 +49,4 @@ open http://localhost:3000
 
 ## Demo
 
-You can access the demo application [here](https://pokemon-jz6d8u7jt-gokhan-demirers-projects.vercel.app)
+You can access the demo application [here](https://pokemon-atf52u5hq-gokhan-demirers-projects.vercel.app/)
