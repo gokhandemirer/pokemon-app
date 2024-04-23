@@ -21,7 +21,7 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
       <div className="bg-white rounded-lg shadow-md p-4 mb-4 w-full">
         <div className="flex flex-col mb-4 text-2xl gap-2">
           <button
-            className="text-sm cursor-pointer hover:bg-gray-200 rounded-md text-left"
+            className="text-sm cursor-pointer text-left"
             style={{ width: "fit-content" }}
             onClick={() => router.push("/pokemon")}
           >
