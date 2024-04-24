@@ -1,4 +1,4 @@
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { PokemonDetail } from "@/types";
 
 type PokemonCardProps = {
@@ -14,19 +14,16 @@ function InfoLine({ title, value }: { title: string; value: string | number }) {
 }
 
 export default function PokemonCard({ pokemon }: PokemonCardProps) {
-  const router = useRouter();
-
   return (
     <>
       <div className="bg-white rounded-lg shadow-md p-4 mb-4 w-full">
         <div className="flex flex-col mb-4 text-2xl gap-2">
-          <button
-            className="text-sm cursor-pointer text-left"
-            style={{ width: "fit-content" }}
-            onClick={() => router.push("/pokemon")}
+          <Link
+            className="text-sm cursor-pointer text-left w-fit"
+            href="/pokemon"
           >
             Back to list
-          </button>
+          </Link>
           <span>{pokemon.name}</span>
         </div>
         <div className="flex flex-col mb-4">
